@@ -18,16 +18,23 @@
         </div>
 
         <script id="post-template" type="text/x-handlebars-template">
-            <div class="post" data-id= "{{id}}">
-                <a href="#" class="remove">remove</a> 
-                <a href="#" class="show-comments">comments</a> {{ text }}
-                
-                <div class="comments-container">                              
-                    <input type="text" class="comment-name"><button class="btn btn-primary add-comment">Post Comment</button> 
-                    <div class="comment-list"> </div>                    
-                </div>
-            </div>
+        <div class="post" data-id= "{{id}}">
+                <a href="#" class="remove">remove</a>
+                <a href="#" class="show-comments">comments</a> {{ text }} 
+                                           
+                <div class="comment-list"> 
+                  {{#each comments}}
+                    <div class='parag' data-id= "{{@index}}" > 
+                      
+                      <span> {{ text }}</span><a href='#' class='removeComment'>remove</a> 
+                    </div>
+                  {{/each}}
+                    
+                <input type="text" class="comment-name"><button class="btn btn-primary add-comment">Post Comment</button>                 
+              </div>
+          </div>
         </script>
+        
 
         
 
